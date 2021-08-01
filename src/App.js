@@ -25,6 +25,7 @@ function App() {
   ]);
 
   // leads to unlimilted re-renders
+  // setTasks keeps on calling the same task again and again
   //  setTasks({
   //   id: 3,
   //   text: "Meeting 3",
