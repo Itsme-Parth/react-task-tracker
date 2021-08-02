@@ -27,6 +27,7 @@ function App() {
   // leads to unlimilted re-renders
   // setTasks keeps on calling the same task again and again
   //  setTasks({
+
   //   id: 3,
   //   text: "Meeting 3",
   //   day: "Feb 6th",
@@ -44,6 +45,16 @@ function App() {
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id))
   }
+
+    // Add Task
+    const addTask = async (task) => {
+      const res = await fetch('http://localhost:5000/tasks', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(task),
+      })
 
   // for(let singleTask of tasks)
   // {
